@@ -16,7 +16,7 @@
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
-    "nwb": "0.18.x"
+    "nwb": "^0.18.10"
   },
   "author": "",
   "license": "MIT",
