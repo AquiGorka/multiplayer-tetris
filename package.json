@@ -12,6 +12,9 @@
     "test:watch": "nwb test-react --server"
   },
   "dependencies": {
+    "event-emitter": "^0.3.5",
+    "nilssongames-tetris": "^0.1.4",
+    "peerjs": "^0.3.14",
     "react": "^15.6.1",
     "react-dom": "^15.6.1"
   },
