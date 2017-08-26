@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react'
 import Game from '../game'
 import Server from '../../lib/webrtc-peer/server'
+import './styles.css'
 
 class Connections extends PureComponent {
 
@@ -20,9 +21,19 @@ class Connections extends PureComponent {
     const { server } = this.state
     const { connections } = server
     const pause = !connections[0].active || !connections[1].active
-    return <div>
-      <Game pause={!connections[0].active} stream={connections[0]} />
-      <Game pause={!connections[1].active} stream={connections[1]} />
+    return <div className="wrapper">
+      <div key="1" className="game game-1">
+        <Game
+          player="1"
+          pause={!connections[0].active}
+          stream={connections[0]} />
+      </div>
+      <div key="2" className="game game-2">
+        <Game
+          player="2"
+          pause={!connections[1].active}
+          stream={connections[1]} />
+      </div>
     </div>
   }
 }

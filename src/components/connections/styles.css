@@ -1,0 +1,17 @@
+.wrapper{
+  height: 100%;
+  border: 1px solid red;
+  display: flex;
+}
+
+.game{
+  width: 50%;
+}
+
+.game-1{
+  border: 1px solid blue;
+}
+
+.game-2{
+  border: 1px solid green;
+}

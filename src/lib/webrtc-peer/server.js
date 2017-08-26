@@ -9,15 +9,14 @@ class Connection extends EventEmitter {
     if (conn) {
       this.active = true
       conn.on('data', data => {
-        console.log('received data: ', data)
+        //console.log('received data: ', data)
         switch(data) {
           case 'shake':
           case 'swipe-left':
-          case 'swipe-rigth':
+          case 'swipe-right':
           case 'swipe-up':
           case 'swipe-down':
-            console.log('emit event')
-            this.emit(data)
+            this.emit('event', data)
             break;
         }
       })
