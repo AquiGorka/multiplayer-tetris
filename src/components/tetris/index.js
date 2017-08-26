@@ -3,6 +3,8 @@ import Piece from 'nilssongames-tetris/lib/piece.js'
 import Board from 'nilssongames-tetris/lib/board.js'
 import './styles.css'
 
+let loops = 0
+
 class Tetris extends Component {
   
   state = {
@@ -56,6 +58,12 @@ class Tetris extends Component {
       this.props.onOver()
     }
     if (!pause) {
+      loops += 1
+      if (loops % 5000 === 0) {
+        console.log(`Time flies ${player}, ${loops}`)
+        game.timeBetweenUpdates = game.timeBetweenUpdates * 3 / 4
+      }
+      //
       const deltaTime = time - game.lastInterval
       game.lastInterval = time
       game.timeSinceLastUpdate += deltaTime
