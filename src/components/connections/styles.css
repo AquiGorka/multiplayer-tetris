@@ -1,6 +1,5 @@
 .wrapper{
   height: 100%;
-  border: 1px solid red;
   display: flex;
 }
 
@@ -8,10 +7,30 @@
   width: 50%;
 }
 
-.game-1{
-  border: 1px solid blue;
+.pause{
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: rgba(100, 100, 100, 0.3);
+  filter: blur(1px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFF;
+  font-size: 70px;
 }
 
-.game-2{
-  border: 1px solid green;
+.over{
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: rgba(100, 100, 100, 0.3);
+  filter: blur(1px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #F00;
+  font-size: 70px;
 }

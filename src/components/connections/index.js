@@ -3,9 +3,17 @@ import Game from '../game'
 import { Server } from '../../lib/webrtc-peer'
 import './styles.css'
 
+const Pause = () => {
+  return <div className="pause">Pause</div>
+}
+
+const Over = () => {
+  return <div className="over">Game Over</div>
+}
+
 class Connections extends PureComponent {
 
-  state = { server: null }
+  state = { server: null, over: false }
 
   componentWillMount() {
     this.setState({ ts: Date.now(), server: new Server({ max: 2 }) })
@@ -18,20 +26,24 @@ class Connections extends PureComponent {
   }
 
   render() {
-    const { server } = this.state
+    const { server, over } = this.state
     const { connections } = server
     const pause = !connections[0].active || !connections[1].active
     return <div className="wrapper">
-      <div key="1" className="game game-1">
+      {pause && <Pause />}
+      {over && <Over />}
+      <div key="1" className="game">
         <Game
           player="1"
-          pause={!connections[0].active}
+          pause={pause || over}
+          onOver={() => this.setState({ over: true})}
           stream={connections[0]} />
       </div>
-      <div key="2" className="game game-2">
+      <div key="2" className="game">
         <Game
           player="2"
-          pause={!connections[1].active}
+          pause={pause || over}
+          onOver={() => this.setState({ over: true })}
           stream={connections[1]} />
       </div>
     </div>

@@ -1,3 +1,9 @@
+.tetris-wrapper{
+  background: #EEE;
+  padding: 150px;
+  border-radius: 4px;
+}
+
 .board{
   width: 200px;
   height: 400px;

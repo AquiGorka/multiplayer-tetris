@@ -37,13 +37,14 @@ class Tetris extends Component {
     const { player } = this.props
     const { game } = this.state
     return (
-      <canvas
-        width={game.board.width}
-        height={game.board.height}
-        className="board"
-        key={player}
-        ref={`canvas_${player}`}
-      />
+      <div className="tetris-wrapper">
+        <canvas
+          width={game.board.width}
+          height={game.board.height}
+          className="board"
+          key={player}
+          ref={`canvas_${player}`} />
+      </div>
     )
   }
 

@@ -41,7 +41,6 @@ class Server extends EventEmitter {
       if (nextAvailableIndex < max) {
         this.connections[nextAvailableIndex] = new Connection({ conn })
         conn.on('close', () => {
-          console.log('disconnected peer')
           this.connections[nextAvailableIndex] = new Connection()
           this.emit('disconnect')
         })
