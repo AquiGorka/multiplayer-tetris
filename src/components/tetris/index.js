@@ -50,6 +50,11 @@ class Tetris extends Component {
 
   loop = (time = 0) => {
     const { pause, game } = this.state
+    const { player } = this.props
+    if (game.board.gameOver) {
+      console.log(`Game over player ${player}`)
+      this.props.onOver()
+    }
     if (!pause) {
       const deltaTime = time - game.lastInterval
       game.lastInterval = time

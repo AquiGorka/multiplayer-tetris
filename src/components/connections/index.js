@@ -7,10 +7,6 @@ const Pause = () => {
   return <div className="pause">Pause</div>
 }
 
-const Over = () => {
-  return <div className="over">Game Over</div>
-}
-
 class Connections extends PureComponent {
 
   state = { server: null, over: false }
@@ -31,7 +27,6 @@ class Connections extends PureComponent {
     const pause = !connections[0].active || !connections[1].active
     return <div className="wrapper">
       {pause && <Pause />}
-      {over && <Over />}
       <div key="1" className="game">
         <Game
           player="1"
