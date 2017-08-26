@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import Game from '../game'
-import Server from '../../lib/webrtc-peer/server'
+import { Server } from '../../lib/webrtc-peer'
 import './styles.css'
 
 class Connections extends PureComponent {

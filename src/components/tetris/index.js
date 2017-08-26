@@ -68,8 +68,9 @@ class Tetris extends Component {
   }
   
   handleEvent = e => {
+    const { player } = this.props
     const { game } = this.state
-    //console.log('received event: ', e)
+    //console.log(`Player: ${player} received event: ${e}`)
     let dir = 'noop'
     switch(e) {
       case 'swipe-left':
@@ -78,22 +79,19 @@ class Tetris extends Component {
       case 'swipe-right':
         dir = 'right'
         break
+      case 'swipe-up':
+        dir = 'up'
+        break
+      case 'swipe-down':
+        dir = 'down'
+        break
     }
     game.piece.move(dir, game.board)
-    /*
-    var dir = game.controlKeys[e.keyCode];
-  
-    if (dir) {
-      e.preventDefault();
-      game.piece.move(dir, game.board);
-  
-      if (dir === 'down') {
-        game.timeSinceLastUpdate = 0;
-      } else if (dir === 'up') {
-        game.piece.rotateRight(game.board);
-      }
+    if (dir === 'down') {
+      game.timeSinceLastUpdate = 0;
+    } else if (dir === 'up') {
+      game.piece.rotateRight(game.board);
     }
-    */
   }
 
   draw = () => {
