@@ -9,7 +9,7 @@ PoC for a multiplayer tetris game. Two smartphones connect via webrtc to a third
 
 Start a dev server (see below) or any server with a build (see below too) and then connect to players that send swipe events via webrtc (swipe-left, swipeup. swipe-right & swipe-down).
 
-You can use this app to do so: https://github.com/AquiGorka/simple-webrtc-events-peer
+You can use this app to do so: https://github.com/AquiGorka/simple-webrtc-events-peer (if you are using such app please include the following query param ```pid=server``` so that all the peers connect to the same namespace)
 
 
 ## Dev
