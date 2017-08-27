@@ -7,4 +7,5 @@
 .board{
   width: 200px;
   height: 400px;
+  border-radius: 4px;
 }
