@@ -28,3 +28,10 @@ npm run build
 ### WebRTC support
 
 Uses PeerJS to contact peers with each other. To make this work add your own PeerJS Api Key
+
+
+### Demo
+
+Board (open this in your computer): http://multi-tetris.surge.sh
+
+Controllers (open in Android smartphone or Chrome/Firefox in desktop): http://swipe.surge.sh
