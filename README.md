@@ -23,3 +23,8 @@ npm start
 ```sh
 npm run build
 ```
+
+
+### WebRTC support
+
+Uses PeerJS to contact peers with each other. To make this work add your own PeerJS Api Key
